@@ -28,12 +28,12 @@ public:
 	QColor getColorAt(qreal index);
 	
 private:
-	// 作为调色板的画布
+    // canvas as a palette
 	QImage *canvas_;
-	// 线性渐变
-	QLinearGradient gradient_;
-	// 宽度
-	int width_;
+    // linear gradient
+    QLinearGradient gradient_;
+    // width
+    int width_;
 };
 
 #endif /* _GRADIENTPALETTE_H_ */

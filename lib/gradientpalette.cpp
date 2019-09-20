@@ -15,8 +15,8 @@
 #include <QDebug>
 
 /*
- * 构造函数
- * @param width 渐变调色板宽度
+ * Constructor
+ * @param width gradient palette width
  */
 GradientPalette::GradientPalette(int width)
 	: gradient_(0, 0, width, 1),
@@ -26,7 +26,7 @@ GradientPalette::GradientPalette(int width)
 }
 
 /*
- * 析构函数
+ * Destructor
  */
 GradientPalette::~GradientPalette()
 {
@@ -35,9 +35,9 @@ GradientPalette::~GradientPalette()
 }
 
 /*
- * 用指定颜色在指定位置创建一个停止点
- * @param index 指定位置，对应位置为 (0, index)
- * @param color 颜色
+ * Create a stop point at the specified location with the specified color
+ * @param index specifies the location, the corresponding position is (0, index)
+ * @param color color
  */
 void GradientPalette::setColorAt(qreal index, const QColor &color)
 {
@@ -50,9 +50,9 @@ void GradientPalette::setColorAt(qreal index, const QColor &color)
 }
 
 /*
- * 获得指定点颜色值
- * @param index 取值位置
- * @return 返回指定索引处的颜色值
+ * Get the specified point color value
+ * @param index value location
+ * @return returns the color value at the specified index
  */
 QColor GradientPalette::getColorAt(qreal index)
 {

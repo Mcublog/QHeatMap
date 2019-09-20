@@ -44,24 +44,24 @@ private:
 	int increase(int x, int y, int delta = 1);
 	
 private:
-	// 存储点频率的数组，大小和图像一样
-	QVector<int> data_;
-	// 用于存储渐变透明数据的图像副本
-	QImage *alphaCanvas_;
-	// 用于显示输出的图像
-	QImage *mainCanvas_;
-	// 调色板
-	GradientPalette *palette_;
-	// 半径
-	int radius_;
-	// 不透明度
-	int opacity_;
-	// 最大命名数
-	qreal max_;
-	// 图像宽度
-	int width_;
-	// 图像高度
-	int height_;
+    // store an array of point frequencies the same size as the image
+    QVector<int> data_;
+    // image copy for storing gradient transparent data
+    QImage *alphaCanvas_;
+    // image for displaying output
+    QImage *mainCanvas_;
+    // palette
+    GradientPalette *palette_;
+    // radius
+    int radius_;
+    // Opacity
+    int opacity_;
+    // maximum number of names
+    qreal max_;
+    // image width
+    int width_;
+    // image height
+    int height_;
 };
 
 #endif /* _HEATMAPPER_H_ */

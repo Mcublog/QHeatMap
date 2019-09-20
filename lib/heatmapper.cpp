@@ -18,10 +18,10 @@
 #include "gradientpalette.h"
 
 /*
- * 构造函数
- * @param image 用于显示输出的图像
- * @param radius 半径，决定了径向渐变的大小
- * @param opacity 不透明度，取值范围为[0, 100]
+ * Constructor
+ * @param image Image for displaying output
+ * @param radius The radius determines the size of the radial gradient
+ * @param opacity Opacity, the range of values is[0, 100]
  */
 HeatMapper::HeatMapper(QImage *image, GradientPalette *palette,
 					   int radius, int opacity)
@@ -47,11 +47,11 @@ HeatMapper::~HeatMapper()
 {}
 
 /*
- * 增加指定坐标点的命中次数
- * @param x 横坐标
- * @param y 纵坐标
- * @param delta 增加的次数值
- * @return 返回更新后的命中次数
+ * Increase the number of hits at the specified coordinate point
+ * @param x abscissa
+ * @param y ordinate
+ * @param delta increased number of times
+ * @return returns the number of hits after the update
  */
 int HeatMapper::increase(int x, int y, int delta)
 {
@@ -61,8 +61,8 @@ int HeatMapper::increase(int x, int y, int delta)
 }
 
 /*
- * 将图像保存到文件
- * @param fname 文件名
+ * Save image to file
+ * @param fname filename
  */
 void HeatMapper::save(const QString &fname)
 {
@@ -70,9 +70,9 @@ void HeatMapper::save(const QString &fname)
 }
 
 /*
- * 添加一个数据点
- * @param x 横坐标
- * @param y 纵坐标
+ * Add a data point
+ * @param x abscissa
+ * @param y ordinate
  */
 void HeatMapper::addPoint(int x, int y)
 {
@@ -91,7 +91,7 @@ void HeatMapper::addPoint(int x, int y)
 }
 
 /*
- * 根据最大命中次数重绘整个图像，此方法会产生余辉效果
+ * Redraw the entire image based on the maximum number of hits, this method produces a afterglow effect
  */
 void HeatMapper::redraw()
 {
@@ -109,8 +109,8 @@ void HeatMapper::redraw()
 }
 
 /*
- * 设置调色板
- * @param palette 调色板对象指针
+ * Set the palette
+ * @param palette palette object pointer
  */
 void HeatMapper::setPalette(GradientPalette *palette)
 {
@@ -121,7 +121,7 @@ void HeatMapper::setPalette(GradientPalette *palette)
 }
 
 /*
- * 获得指定点的命中次数
+ * Get the number of hits at the specified point
  */
 int HeatMapper::getCount(int x, int y)
 {
@@ -131,11 +131,11 @@ int HeatMapper::getCount(int x, int y)
 }
 
 /*
- * 绘制透明径向渐变
- * @param x 横坐标
- * @param y 纵坐标
- * @param count 被命中次数
- * @param colorize_now 是否调用着色方法
+ * Draw a transparent radial gradient
+ * @param x abscissa
+ * @param y ordinate
+ * @param count hits
+ * @param colorize_now Whether to call the shading method
  */
 void HeatMapper::drawAlpha(int x, int y, int count, bool colorize_now)
 {
@@ -154,7 +154,7 @@ void HeatMapper::drawAlpha(int x, int y, int count, bool colorize_now)
 }
 
 /*
- * 重载方法，着色
+ * Overloaded method, coloring
  */
 void HeatMapper::colorize()
 {
@@ -162,10 +162,10 @@ void HeatMapper::colorize()
 }
 
 /*
- * 重载方法，着色
- * @param x 横坐标
- * @param y 纵坐标
- * @param subArea 透明径向渐变区域
+ * overloaded method, coloring
+ * @param x abscissa
+ * @param y ordinate
+ * @param subArea transparent radial gradient area
  */
 void HeatMapper::colorize(int x, int y)
 {
@@ -191,11 +191,11 @@ void HeatMapper::colorize(int x, int y)
 }
 
 /*
- * 重载函数，实际的着色操作在本方法
- * @param left   左上角横坐标
- * @param top    左上角纵坐标
- * @param right  右下角横坐标
- * @param bottom 右下角纵坐标
+ * overloaded function, the actual shading operation in this method
+ * @param left upper left horizontal axis
+ * @param top upper left ordinate
+ * @param right lower right corner abscissa
+ * @param bottom lower right ordinate
  */
 void HeatMapper::colorize(int left, int top, int right, int bottom)
 {
@@ -216,22 +216,3 @@ void HeatMapper::colorize(int left, int top, int right, int bottom)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
